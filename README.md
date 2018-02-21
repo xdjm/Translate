@@ -1,6 +1,6 @@
 # BaiduTranslate
 BaiduTranslate Sdk by xdjm
-# 百度翻译
+# 百度翻译Sdk
 ## 用法
 BaiduTrans.build().with("android").from("en").to("zh").into(tv);
 - with("要翻译的内容")
