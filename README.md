@@ -1,6 +1,28 @@
 # BaiduTranslate
-# 百度翻译
-## 简单用法
+By xdjm
+## How to
+Step 1. Add the JitPack repository to your build file.
+Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency
+```
+dependencies {
+	        compile 'com.github.xdjm:BaiduTranslate:1.0'
+	}
+```
+Step 3. Add the internet permission
+```
+ <uses-permission android:name="android.permission.INTERNET" />
+```
+
+## simple usage
 ```
 BaiduTrans.build().with("android").into(new BaiduTrans.OnSuccess2Trans() {
         @Override
@@ -9,7 +31,7 @@ BaiduTrans.build().with("android").into(new BaiduTrans.OnSuccess2Trans() {
                 }
 });
 ```
-## 复杂用法
+## complex usage
 ```
 BaiduTrans.build().with("android").from("en").to("zh").into(new BaiduTrans.OnSuccess2Trans() {
         @Override
@@ -23,6 +45,7 @@ BaiduTrans.build().with("android").from("en").to("zh").into(new BaiduTrans.OnSuc
 - to("译文语言")
 - into("设置控件")
 
+Maybe give me some stars~ Thx.
 ```
 Copyright 2018 xdjm
 
