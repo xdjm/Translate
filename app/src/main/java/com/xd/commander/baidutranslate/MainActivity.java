@@ -11,7 +11,12 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView v =findViewById(R.id.tv);
-        BaiduTrans.build().with("android").from("en").to("zh").into(v);
+        final TextView v =findViewById(R.id.tv);
+        BaiduTrans.build().with("android").from("en").to("zh").into(new BaiduTrans.OnSuccess2Trans() {
+            @Override
+            public void out(String s) {
+                v.setText(s);
+            }
+        });
     }
 }

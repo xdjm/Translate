@@ -23,13 +23,9 @@ public class Trans {
     public void setFrom(String from) {
         this.from = from;
     }
-
-
     public List<TransResultBean> getTrans_result() {
         return trans_result;
     }
-
-
     public static class TransResultBean {
 
         private String src;
