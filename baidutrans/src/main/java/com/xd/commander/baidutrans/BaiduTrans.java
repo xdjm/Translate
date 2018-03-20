@@ -17,9 +17,17 @@ import okhttp3.Response;
  */
 
 public class BaiduTrans {
+
+    private static final String TAG = "BaiduTrans";
+
+    private String url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
+    private String salt = String.valueOf(System.currentTimeMillis());
+    //default
     private String to = "zh";
+    //default
     private String from = "en";
     private String context = null;
+    //
     private String appId = "20160424000019521";
     private String securityKey = "Hv8XkkCeQTn5xGBPDYgj";
     private static BaiduTrans baiduTrans = null;
@@ -60,18 +68,18 @@ public class BaiduTrans {
         return this;
     }
 
-   public void into(final OnSuccess2Trans onSuccess2Trans) {
+   public void into( OnSuccess2Trans onSuccess2Trans) {
         OkHttpClient client = new OkHttpClient();
         RequestBody body = new FormBody.Builder()
                 .add("q", context)
                 .add("from", from)
                 .add("to", to)
                 .add("appid", appId)
-                .add("salt", "1435660288")
-                .add("sign", Md5.md5(appId + context + 1435660288 + securityKey))
+                .add("salt", salt)
+                .add("sign", Md5.md5(appId + context + salt + securityKey))
                 .build();
         Request request = new Request.Builder()
-                .url("http://api.fanyi.baidu.com/api/trans/vip/translate")
+                .url(url)
                 .post(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {

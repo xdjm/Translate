@@ -17,9 +17,24 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+task hello{
+    doLast{
+        println'hello world!'
+    }
+}
+task wrapper(type:Wrapper){
+    distributionBase='GRADLE_USER_HOME'
+    distributionPath='wrapper/dists'
+    archiveBase='GRADLE_USER_HOME'
+    archivePath='wrapper/dists'
+    distributionUrl='https://services.gradle.org/distributions/gradle-4.1-all.zip'
+    gradleVersion = '4.1'
 }
