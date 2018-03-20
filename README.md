@@ -16,7 +16,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-	        compile 'com.github.xdjm:BaiduTranslate:1.0'
+	        compile 'com.github.xdjm:BaiduTranslate:1.1'
 	}
 ```
 Step 3. Add the internet permission
