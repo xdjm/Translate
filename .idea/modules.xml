@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BaiduTranslate.iml" filepath="$PROJECT_DIR$/BaiduTranslate.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baidutrans/baidutrans.iml" filepath="$PROJECT_DIR$/baidutrans/baidutrans.iml" />
     </modules>
   </component>
 </project>

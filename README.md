@@ -1,4 +1,6 @@
-# BaiduTranslate
+# Translate
+A lightweight translation tool.Include Baidu and Youdao
+
 by xdjm
 ## How to
 Step 1. Add the JitPack repository to your build file.
@@ -14,7 +16,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-	        compile 'com.github.xdjm:BaiduTranslate:1.0'
+	        compile 'com.github.xdjm:Translate:1.0'
 	}
 ```
 Step 3. Add the internet permission
@@ -24,19 +26,26 @@ Step 3. Add the internet permission
 
 ## Simple usage
 ```
-BaiduTrans.build().with("android").into(new BaiduTrans.OnSuccess2Trans() {
-        @Override
+ BaiduTrans.build().with("engligsh").into(new OnTransSuccess() {
+                @Override
                 public void out(String s) {
-                        v.setText(s);
+                    tv.setText(s);
                 }
-});
+            });
+ 
+ YoudaoTrans.build().with("engligsh").into(new OnTransSuccess() {
+                @Override
+                public void out(String s) {
+                     tv.setText(s);
+                }
+            });
 ```
 ## Complex usage
 ```
-BaiduTrans.build().with("android").from("en").to("zh").into(new BaiduTrans.OnSuccess2Trans() {
+BaiduTrans.build().with("android").from("en").to("zh").into(new OnTransSuccess() {
         @Override
                 public void out(String s) {
-                        v.setText(s);
+                        tv.setText(s);
                 }
 });
 ```

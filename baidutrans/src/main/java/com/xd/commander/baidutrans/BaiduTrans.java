@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.List;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -20,16 +22,12 @@ public class BaiduTrans {
 
     private static final String TAG = "BaiduTrans";
 
-    private String url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
     private String salt = String.valueOf(System.currentTimeMillis());
-    //default
     private String to = "zh";
-    //default
     private String from = "en";
-    private String context = null;
-    //
     private String appId = "20160424000019521";
     private String securityKey = "Hv8XkkCeQTn5xGBPDYgj";
+    private String context = null;
     private static BaiduTrans baiduTrans = null;
 
     private BaiduTrans(){}
@@ -44,13 +42,13 @@ public class BaiduTrans {
         return baiduTrans;
     }
 
-    public BaiduTrans setAppId(String APP_ID) {
-        this.appId = APP_ID;
+    public BaiduTrans setAppId(String appId) {
+        this.appId = appId;
         return this;
     }
 
-    public BaiduTrans setSecurityKey(String SECURITY_KEY) {
-        this.securityKey = SECURITY_KEY;
+    public BaiduTrans setSecurityKey(String securityKey) {
+        this.securityKey = securityKey;
         return this;
     }
 
@@ -68,7 +66,7 @@ public class BaiduTrans {
         return this;
     }
 
-   public void into( OnSuccess2Trans onSuccess2Trans) {
+   public void into( final OnTransSuccess onTransSuccess) {
         OkHttpClient client = new OkHttpClient();
         RequestBody body = new FormBody.Builder()
                 .add("q", context)
@@ -78,7 +76,8 @@ public class BaiduTrans {
                 .add("salt", salt)
                 .add("sign", Md5.md5(appId + context + salt + securityKey))
                 .build();
-        Request request = new Request.Builder()
+       String url = "http://api.fanyi.baidu.com/api/trans/vip/translate";
+       Request request = new Request.Builder()
                 .url(url)
                 .post(body)
                 .build();
@@ -93,7 +92,7 @@ public class BaiduTrans {
                     @Override
                     public void run() {
                         try {
-                            onSuccess2Trans.out(new Gson().fromJson(response.body().string(), Trans.class).getTrans_result().get(0).getDst());
+                            onTransSuccess.out(new Gson().fromJson(response.body().string(), Trans.class).getTrans_result().get(0).getDst());
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -102,7 +101,37 @@ public class BaiduTrans {
             }
         });
     }
-     public interface OnSuccess2Trans{
-        void out(String s);
+    class Trans {
+
+        /**
+         * from : en
+         * to : zh
+         * trans_result : [{"src":"fuck you","dst":"你他妈的"}]
+         */
+
+        private String from;
+        private String to;
+        private List<TransResultBean> trans_result;
+
+        public String getFrom() {
+            return from;
+        }
+
+        public void setFrom(String from) {
+            this.from = from;
+        }
+        public List<TransResultBean> getTrans_result() {
+            return trans_result;
+        }
+        public  class TransResultBean {
+
+            private String src;
+            private String dst;
+
+            public String getDst() {
+                return dst;
+            }
+
+        }
     }
 }
