@@ -1,6 +1,6 @@
 # Translate
 
-[中文文档](https://github.com/xdjm/BaiduTranslate/blob/master/README_CN.md)
+[中文文档](https://github.com/xdjm/BaiduTranslate/blob/master/README_CN)
 
 A lightweight translation tool.
 
