@@ -1,15 +1,12 @@
-# Translate
+# 翻译 
 
-[中文文档](https://github.com/xdjm/BaiduTranslate/blob/master/README_CN.md)
+一个轻量级的翻译工具
 
-A lightweight translation tool.
+包括百度翻译和有道翻译
 
-Include BaiduTrans and YoudaoTrans
-
-by xdjm
-## How to
-Step 1. Add the JitPack repository to your build file.
-Add it in your root build.gradle at the end of repositories:
+作者：xdjm
+## 怎么用
+第一步， 在build.gradle里添加JitPack
 ```
 allprojects {
 		repositories {
@@ -18,18 +15,18 @@ allprojects {
 		}
 	}
 ```
-Step 2. Add the dependency
+第二步，在app/build.gradle里添加库地址
 ```
 dependencies {
 	        compile 'com.github.xdjm:BaiduTranslate:1.0'
 	}
 ```
-Step 3. Add the internet permission
+第三步，添加网络权限
 ```
  <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-## Simple usage
+## 简单用法
 ```
  BaiduTrans.build().with("engligsh").into(new OnTransSuccess() {
                 @Override
@@ -45,7 +42,7 @@ Step 3. Add the internet permission
                 }
             });
 ```
-## Complex usage
+## 复杂用法
 ```
 BaiduTrans.build().with("android").from("en").to("zh").into(new OnTransSuccess() {
         @Override
@@ -59,9 +56,9 @@ BaiduTrans.build().with("android").from("en").to("zh").into(new OnTransSuccess()
 - to("译文语言")
 - into("设置控件")
 
-## Notice
+## 注意
 
-If the appkey fails, you can go to the official website to apply,and like this.
+如果appkey失效了，你可以去官方网站申请，然后这样设置
 ```
 BaiduTrans.build().setAppId("新申请的AppId").with("android").from("en").to("zh").into(new OnTransSuccess() {
         @Override
@@ -71,16 +68,18 @@ BaiduTrans.build().setAppId("新申请的AppId").with("android").from("en").to("
 });
 ```
 
-So do YoudaoTrans. 
-## Official website 
+YoudaoTrans也一样
+## 官网
 
-You can go to the official website to see the supported languages or reapply for Appkey.
+您可以前往官方网站查看支持的语言或重新申请Appkey。
 
-[BaiduTrans](http://api.fanyi.baidu.com/api/trans/product/apidoc)
+当然，你也可以使用库中默认的appkey。
 
-[YoudaoTrans](http://ai.youdao.com/docs/doc-trans-api.s)
+[百度翻译](http://api.fanyi.baidu.com/api/trans/product/apidoc)
 
-Maybe give me some stars~ Thx.
+[有道翻译](http://ai.youdao.com/docs/doc-trans-api.s)
+
+或许给我一颗star比一杯咖啡更提神~ 谢谢
 ```
 Copyright 2018 xdjm
 
@@ -96,3 +95,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
