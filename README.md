@@ -2,7 +2,7 @@
 
 A lightweight translation tool.
 
-Include BaiduTrans  YoudaoTrans  GooglrTrans
+Include BaiduTrans  YoudaoTrans  GoogleTrans
 
 by xdjm
 ## How to
