@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  ~ Copyright 2019 xdjm
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/from"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:hint="请输入待翻译的内容"
-        android:text="android" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:onClick="trans"
-        android:text="翻译" />
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@android:color/white"
+            android:gravity="left|top"
+            android:hint="请输入..." />
+<Button
+    android:text="翻译"
+    android:onClick="trans"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/translate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="horizontal">
+            android:background="#F2F3F5"
+            android:padding="5dp"
+            android:text="翻译结果" />
 
-            <TextView
-                android:id="@+id/toBaidu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="BaiduTrans"
-                android:textIsSelectable="true" />
-
-            <TextView
-                android:id="@+id/toYoudao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="YoudaoTrans"
-                android:textIsSelectable="true" />
-
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+        <TextView
+            android:hint="谷歌翻译"
+            android:id="@+id/googleresult"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:textIsSelectable="true" />
+    <TextView
+        android:hint="有道翻译"
+        android:id="@+id/youdaoresult"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:textIsSelectable="true" />
+    <TextView
+        android:hint="百度翻译"
+        android:id="@+id/baiduresult"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:textIsSelectable="true" />
+    </LinearLayout>

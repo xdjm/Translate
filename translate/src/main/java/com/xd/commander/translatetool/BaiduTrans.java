@@ -1,7 +1,24 @@
-package com.xd.commander.baidutrans;
+/*
+ * Copyright 2019 xdjm
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.xd.commander.translatetool;
 
 import android.os.Handler;
 import android.os.Looper;
+
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.List;
@@ -14,13 +31,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-/**
- * @author Administrator 19:39 2018/2/20
- */
-
 public class BaiduTrans {
-
-    private static final String TAG = "BaiduTrans";
 
     private String salt = String.valueOf(System.currentTimeMillis());
     private String to = "zh";
@@ -30,7 +41,6 @@ public class BaiduTrans {
     private String context = null;
     private static BaiduTrans baiduTrans = null;
 
-    private BaiduTrans(){}
     public static  BaiduTrans build(){
         if(baiduTrans == null) {
             synchronized (BaiduTrans.class){
@@ -56,6 +66,7 @@ public class BaiduTrans {
         this.to = to;
         return this;
     }
+
     public BaiduTrans from(String from) {
         this.from = from;
         return this;
@@ -66,7 +77,7 @@ public class BaiduTrans {
         return this;
     }
 
-   public void into( final OnTransSuccess onTransSuccess) {
+    public void into( final OnTransSuccess onTransSuccess) {
         OkHttpClient client = new OkHttpClient();
         RequestBody body = new FormBody.Builder()
                 .add("q", context)
@@ -92,6 +103,7 @@ public class BaiduTrans {
                     @Override
                     public void run() {
                         try {
+                            assert response.body() != null;
                             onTransSuccess.out(new Gson().fromJson(response.body().string(), Trans.class).getTrans_result().get(0).getDst());
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -101,13 +113,8 @@ public class BaiduTrans {
             }
         });
     }
-    class Trans {
 
-        /**
-         * from : en
-         * to : zh
-         * trans_result : [{"src":"fuck you","dst":"你他妈的"}]
-         */
+    class Trans {
 
         private String from;
         private String to;
@@ -120,18 +127,17 @@ public class BaiduTrans {
         public void setFrom(String from) {
             this.from = from;
         }
+
         public List<TransResultBean> getTrans_result() {
             return trans_result;
         }
-        public  class TransResultBean {
 
+        public  class TransResultBean {
             private String src;
             private String dst;
-
             public String getDst() {
                 return dst;
             }
-
         }
     }
 }

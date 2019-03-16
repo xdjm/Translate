@@ -1,10 +1,10 @@
 # Translate
 
-[中文文档](https://github.com/xdjm/BaiduTranslate/blob/master/README_CN)
+[中文文档](https://github.com/xdjm/BaiduTranslate/blob/master/README_CN.md)
 
 A lightweight translation tool.
 
-Include BaiduTrans and YoudaoTrans
+Include BaiduTrans  YoudaoTrans  GooglrTrans
 
 by xdjm
 ## How to
@@ -21,7 +21,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-	        compile 'com.github.xdjm:BaiduTranslate:1.1'
+	        compile 'com.github.xdjm:Translate:1.2'
 	}
 ```
 Step 3. Add the internet permission
@@ -31,19 +31,26 @@ Step 3. Add the internet permission
 
 ## Simple usage
 ```
- BaiduTrans.build().with("engligsh").into(new OnTransSuccess() {
+ BaiduTrans.build().with("translate").into(new OnTransSuccess() {
                 @Override
                 public void out(String s) {
                     tv.setText(s);
                 }
             });
  
- YoudaoTrans.build().with("engligsh").into(new OnTransSuccess() {
+ YoudaoTrans.build().with("translate").into(new OnTransSuccess() {
                 @Override
                 public void out(String s) {
                      tv.setText(s);
                 }
             });
+            
+  GoogleTrans.build().with("translate").into(new OnTransSuccess() {
+                 @Override
+                 public void out(String s) {
+                      tv.setText(s);
+                 }
+             });
 ```
 ## Complex usage
 ```
@@ -72,17 +79,20 @@ BaiduTrans.build().setAppId("新申请的AppId").with("android").from("en").to("
 ```
 
 So do YoudaoTrans. 
-## Official website 
 
 You can go to the official website to see the supported languages or reapply for Appkey.
+
+## Official website 
 
 [BaiduTrans](http://api.fanyi.baidu.com/api/trans/product/apidoc)
 
 [YoudaoTrans](http://ai.youdao.com/docs/doc-trans-api.s)
 
+GoogleTrans ignored.
+
 Maybe give me some stars~ Thx.
 ```
-Copyright 2018 xdjm
+Copyright 2019 xdjm
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

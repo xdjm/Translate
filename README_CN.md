@@ -2,7 +2,7 @@
 
 一个轻量级的翻译工具
 
-包括百度翻译和有道翻译
+包括百度翻译、有道翻译和谷歌翻译
 
 作者：xdjm
 ## 怎么用
@@ -41,6 +41,12 @@ dependencies {
                      tv.setText(s);
                 }
             });
+ GoogleTrans.build().with("translate").into(new OnTransSuccess() {
+                  @Override
+                  public void out(String s) {
+                       tv.setText(s);
+                  }
+              });
 ```
 ## 复杂用法
 ```
@@ -79,9 +85,11 @@ YoudaoTrans也一样
 
 [有道翻译](http://ai.youdao.com/docs/doc-trans-api.s)
 
+然而，谷歌翻译不用理会这些，它一直有效。
+
 或许给我一颗star比一杯咖啡更提神~ 谢谢
 ```
-Copyright 2018 xdjm
+Copyright 2019 xdjm
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

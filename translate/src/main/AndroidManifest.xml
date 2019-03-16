@@ -14,6 +14,4 @@
   ~ limitations under the License.
   -->
 
-<resources>
-    <string name="app_name">Translate</string>
-</resources>
+<manifest package="com.xd.commander.translatetool" />

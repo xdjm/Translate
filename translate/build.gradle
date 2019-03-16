@@ -14,29 +14,19 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.library'
 
-buildscript {
-    
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.google.code.gson:gson:2.8.2'
 }
