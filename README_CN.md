@@ -18,7 +18,7 @@ allprojects {
 第二步，在app/build.gradle里添加库地址
 ```
 dependencies {
-	        compile 'com.github.xdjm:Translate:1.2'
+	        implementation 'com.github.xdjm:Translate:1.2'
 	}
 ```
 第三步，添加网络权限
