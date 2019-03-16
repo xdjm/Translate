@@ -1,4 +1,4 @@
-# Translate
+# Translate [![Release](https://jitpack.io/v/xdjm/BaiduTranslate.svg)](https://github.com/xdjm/BaiduTranslate)
 
 [中文文档](https://github.com/xdjm/BaiduTranslate/blob/master/README_CN.md)
 
