@@ -1,4 +1,4 @@
-# 翻译 
+# 翻译 [![](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate)
 
 一个轻量级的翻译工具
 
@@ -18,7 +18,7 @@ allprojects {
 第二步，在app/build.gradle里添加库地址
 ```
 dependencies {
-	        compile 'com.github.xdjm:BaiduTranslate:1.1'
+	        compile 'com.github.xdjm:Translate:1.2'
 	}
 ```
 第三步，添加网络权限
@@ -28,14 +28,14 @@ dependencies {
 
 ## 简单用法
 ```
- BaiduTrans.build().with("engligsh").into(new OnTransSuccess() {
+ BaiduTrans.build().with("translate").into(new OnTransSuccess() {
                 @Override
                 public void out(String s) {
                     tv.setText(s);
                 }
             });
  
- YoudaoTrans.build().with("engligsh").into(new OnTransSuccess() {
+ YoudaoTrans.build().with("translate").into(new OnTransSuccess() {
                 @Override
                 public void out(String s) {
                      tv.setText(s);
