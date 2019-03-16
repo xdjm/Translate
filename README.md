@@ -1,4 +1,4 @@
-# Translate [![Release](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate) [中文文档](https://github.com/xdjm/Translate/blob/master/README_CN.md)
+# Translate [中文文档](https://github.com/xdjm/Translate/blob/master/README_CN.md) [![Release](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate) 
 
 A lightweight translation tool.
 
