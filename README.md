@@ -1,6 +1,6 @@
-# Translate [![Release](https://jitpack.io/v/xdjm/BaiduTranslate.svg)](https://github.com/xdjm/BaiduTranslate)
+# Translate [![Release](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate)
 
-[中文文档](https://github.com/xdjm/BaiduTranslate/blob/master/README_CN.md)
+[中文文档](https://github.com/xdjm/Translate/blob/master/README_CN.md)
 
 A lightweight translation tool.
 
@@ -21,7 +21,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-	        compile 'com.github.xdjm:Translate:1.2'
+	        implementation 'com.github.xdjm:Translate:1.2'
 	}
 ```
 Step 3. Add the internet permission
