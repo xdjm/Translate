@@ -1,4 +1,5 @@
-# 翻译 [![](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate)
+# 翻译 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Translate-blue.svg?style=flat)](https://android-arsenal.com/details/1/7575)[![](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate)
 
 一个轻量级的翻译工具
 
