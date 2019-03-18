@@ -1,5 +1,5 @@
 # Translate [中文文档](https://github.com/xdjm/Translate/blob/master/README_CN.md) [![Release](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate) 
-
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Translate-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7575)
 A lightweight translation tool.
 
 Include BaiduTrans  YoudaoTrans  GoogleTrans
