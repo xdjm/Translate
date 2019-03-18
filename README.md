@@ -1,4 +1,6 @@
-# Translate [中文文档](https://github.com/xdjm/Translate/blob/master/README_CN.md) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Translate-blue.svg?style=flat)](https://android-arsenal.com/details/1/7575)[![Release](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate) 
+# Translate [中文文档](https://github.com/xdjm/Translate/blob/master/README_CN.md) 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Translate-blue.svg?style=flat)](https://android-arsenal.com/details/1/7575)
+[![Release](https://jitpack.io/v/xdjm/Translate.svg)](https://jitpack.io/#xdjm/Translate) 
 
 A lightweight translation tool.
 
